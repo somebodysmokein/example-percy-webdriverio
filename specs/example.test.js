@@ -29,7 +29,8 @@ describe('example page', function () {
   it('Loads the app', async function () {
     await browser.url(TEST_URL);
 
-    expect(await browser.getTitle()).toEqual('VanillaJS • TodoMVC');
+    //expect(await browser.getTitle()).toEqual('VanillaJS • TodoMVC');
+    expect(await browser.getTitle()).toEqual('Master • B1');
     await percySnapshot(browser, 'loads the app');
   });
 
