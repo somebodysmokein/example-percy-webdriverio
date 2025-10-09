@@ -39,7 +39,11 @@ describe('example page', function () {
     let todoCount = await browser.execute(() => document.querySelectorAll('.todo-list li').length);
     expect(todoCount).toEqual(1);
 
-    await percySnapshot(browser, 'Snapshot with new todo');
+    browser.execute("document.getElementsByClassName('filters')[0].style.display = 'none'");
+    await percySnapshot(browser, 'Snapshot with new todo'); 
+  //   await percySnapshot(browser, 'Snapshot with new todo',{percyCSS:`ul.filters {
+  //     display: none;
+  // }`});
   });
 
   it('Lets you check off a todo', async function () {
